@@ -1,0 +1,234 @@
+Questão 1
+Letra A) import pandas as pd
+
+# Dados
+data = [
+    [1986, 'Western Pacific', 'Viet Nam', 'Wine', 0],
+    [1986, 'Americas', 'Uruguay', 'Other', 0.5],
+    [1985, 'Africa', 'Cte d\'Ivoire', 'Wine', 1.62],
+    [1986, 'Americas', 'Colombia', 'Beer', 4.27],
+    [1987, 'Americas', 'Saint Kitts and Nevis', 'Beer', 1.98],
+    [1987, 'Americas', 'Guatemala', 'Other', 0],
+    [1987, 'Africa', 'Mauritius', 'Wine', 0.13],
+    [1985, 'Africa', 'Angola', 'Spirits', 0.39],
+    [1986, 'Americas', 'Antigua and Barbuda', 'Spirits', 1.55],
+    [1984, 'Africa', 'Nigeria', 'Other', 6.1],
+    [1987, 'Africa', 'Botswana', 'Wine', 0.2],
+    [1989, 'Americas', 'Guatemala', 'Beer', 0.62],
+    [1985, 'Western Pacific', 'Lao People\'s Democratic Republic', 'Beer', 0],
+    [1984, 'Eastern Mediterranean', 'Afghanistan', 'Other', 0],
+    [1985, 'Western Pacific', 'Viet Nam', 'Spirits', 0.05],
+    [1987, 'Africa', 'Guinea-Bissau', 'Wine', 0.07],
+    [1984, 'Americas', 'Costa Rica', 'Wine', 0.06],
+    [1989, 'Africa', 'Seychelles', 'Beer', 2.23],
+    [1984, 'Europe', 'Norway', 'Spirits', 1.62],
+    [1984, 'Africa', 'Kenya', 'Beer', 1.08],
+    [1986, 'South-East Asia', 'Myanmar', 'Wine', 0],
+    [1989, 'Americas', 'Costa Rica', 'Spirits', 4.51],
+    [1984, 'Europe', 'Romania', 'Spirits', 2.67],
+    [1984, 'Europe', 'Turkey', 'Beer', 0.44],
+    [1985, 'Africa', 'Comoros', 'Other', None],
+    [1984, 'Eastern Mediterranean', 'Tunisia', 'Other', 0],
+    [1985, 'Europe', 'United Kingdom of Great Britain and Northern Ireland', 'Wine', 1.36],
+    [1984, 'Eastern Mediterranean', 'Bahrain', 'Beer', 2.22],
+    [1987, 'Western Pacific', 'Viet Nam', 'Beer', 0.11],
+    [1986, 'Europe', 'Italy', 'Other', None],
+    [1986, 'Africa', 'Sierra Leone', 'Other', 4.48],
+    [1986, 'Western Pacific', 'Micronesia (Federated States of)', 'Wine', 0],
+    [1989, 'Africa', 'Mauritius', 'Beer', 1.6],
+    [1985, 'Africa', 'Mauritania', 'Other', 0],
+    [1986, 'Europe', 'Russian Federation', 'Wine', 0.8],
+    [1985, 'Americas', 'Saint Kitts and Nevis', 'Spirits', 2.24],
+    [1987, 'Eastern Mediterranean', 'Egypt', 'Beer', 0.07],
+    [1986, 'Europe', 'Sweden', 'Beer', 3.04],
+    [1987, 'Eastern Mediterranean', 'Qatar', 'Other', 0],
+    [1987, 'Africa', 'Burkina Faso', 'Spirits', 0.01],
+    [1987, 'Europe', 'Austria', 'Spirits', 1.9],
+    [1986, 'Europe', 'Czech Republic', 'Beer', 6.82],
+    [1984, 'Europe', 'Ukraine', 'Spirits', 3.06],
+    [1984, 'Western Pacific', 'China', 'Wine', 0.03],
+    [1985, 'Europe', 'Lithuania', 'Other', None],
+    [1989, 'Africa', 'Zimbabwe', 'Beer', 0.19],
+    [1987, 'Americas', 'Trinidad and Tobago', 'Spirits', 2.26],
+    [1986, 'Americas', 'Mexico', 'Other', 0.04],
+    [1987, 'Americas', 'Nicaragua', 'Beer', 0.7],
+    [1986, 'Europe', 'Malta', 'Wine', 1.49],
+    [1985, 'Europe', 'Switzerland', 'Other', 0.3],
+    [1987, 'Europe', 'Finland', 'Beer', 3.88],
+    [1986, 'Eastern Mediterranean', 'Saudi Arabia', 'Wine', 0],
+    [1984, 'Eastern Mediterranean', 'Kuwait', 'Beer', 0],
+    [1984, 'Americas', 'El Salvador', 'Spirits', 1.81],
+    [1989, 'Americas', 'Suriname', 'Wine', 0.04],
+    [1987, 'Western Pacific', 'Viet Nam', 'Wine', 0],
+    [1989, 'Europe', 'Croatia', 'Wine', 5.1],
+    [1984, 'Eastern Mediterranean', 'Somalia', 'Spirits', 0],
+    [1989, 'Eastern Mediterranean', 'Syrian Arab Republic', 'Other', 0],
+    [1987, 'Eastern Mediterranean', 'Iran (Islamic Republic of)', 'Other', 0],
+    [1984, 'Western Pacific', 'Papua New Guinea', 'Spirits', 0.08],
+    [1987, 'Americas', 'Suriname', 'Other', 0],
+    [1985, 'Eastern Mediterranean', 'Libya', 'Other', 0],
+    [1989, 'Americas', 'Bolivia (Plurinational State of)', 'Beer', 1.26],
+    [1989, 'Eastern Mediterranean', 'Somalia', 'Beer', 0],
+    [1987, 'Eastern Mediterranean', 'Iraq', 'Wine', 0.01],
+    [1989, 'Africa', 'Namibia', 'Beer', 0],
+    [1989, 'Africa', 'Uganda', 'Beer', 0.12],
+    [1986, 'Africa', 'Togo', 'Spirits', 0.42],
+    [1986, 'Africa', 'Madagascar', 'Spirits', 1.02],
+    [1985, 'Africa', 'Mali', 'Other', 0.57],
+    [1987, 'Africa', 'Mauritania', 'Other', 0],
+    [1986, 'Eastern Mediterranean', 'Pakistan', 'Other', 0.01],
+    [1986, 'Americas', 'Bolivia (Plurinational State of)', 'Spirits', 2.06],
+    [1989, 'Eastern Mediterranean', 'Afghanistan', 'Other', 0],
+    [1985, 'Africa', 'Comoros', 'Beer', 0.02],
+    [1985, 'Africa', 'Cameroon', 'Spirits', 0.01],
+    [1989, 'Americas', 'Jamaica', 'Other', 0],
+    [1989, 'Europe', 'Finland', 'Other', 2.09],
+    [1985, 'Africa', 'Malawi', 'Other', 0.84],
+    [1985, 'Europe', 'Netherlands', 'Wine', 2.54],
+    [1987, 'Europe', 'Ireland', 'Spirits', 2.25],
+    [1986, 'Europe', 'Ukraine', 'Other', None],
+    [1986, 'South-East Asia', 'Sri Lanka', 'Other', 0],
+    [1985, 'Africa', 'Democratic Republic of the Congo', 'Wine', 0.01],
+    [1986, 'Americas', 'Bahamas', 'Wine', 1.83],
+    [1989, 'Eastern Mediterranean', 'Iraq', 'Wine', 0.01],
+    [1987, 'Eastern Mediterranean', 'Lebanon', 'Beer', 0.42],
+    [1986, 'Eastern Mediterranean', 'Lebanon', 'Wine', 0.7],
+    [1989, 'Africa', 'Malawi', 'Wine', 0.01],
+    [1989, 'Europe', 'Bulgaria', 'Beer', 4.43],
+    [1986, 'Africa', 'Eritrea', 'Spirits', 0],
+    [1987, 'Africa', 'Madagascar', 'Other', None],
+    [1985, 'Europe', 'Ukraine', 'Spirits', 3.06],
+    [1984, 'Africa', 'Niger', 'Other', 0],
+    [1985, 'Europe', 'Luxembourg', 'Wine', 7.38],
+    [1984, 'South-East Asia', 'Indonesia', 'Wine', 0],
+    [1984, 'Africa', 'Equatorial Guinea', 'Wine', 0],
+    [1985, 'South-East Asia', 'Democratic People\'s Republic of Korea', 'Wine', 0]
+]
+
+# Criar DataFrame
+df = pd.DataFrame(data, columns=['Beverage Types'])
+
+# Agrupar por tipo de bebida
+grouped = df.groupby('Beverage Types')
+
+# Imprimir grupos
+for beverage, group in grouped:
+    print(beverage)
+    print(group)
+    print()
+
+Letra B) import pandas as pd
+
+# Criar DataFrame com os dados fornecidos
+data = {
+    'Year': [1984, 1985, 1986, 1987, 1989],
+    'WHO region': ['Western Pacific', 'Americas', 'Africa', 'Eastern Mediterranean', 'South-East Asia', 'Europe'],
+}
+
+df = pd.DataFrame(data)
+
+# Agrupar por região e ano, contando o número de ocorrências
+grouped = df.groupby(['WHO region', 'Year']).size().reset_index(name='Count')
+
+# Imprimir o resultado
+print(grouped)
+
+Letra C) import csv
+
+contagem_regioes = {}
+contagem_paises = {}
+soma_valores = {}
+
+with open('world_alcohol.csv', 'r') as arquivo:
+    leitor = csv.DictReader(arquivo)
+    for linha in leitor:
+        regiao = linha['WHO region']
+        pais = linha['Country']
+        bebida = linha['Beverage Types']
+        valor = float(linha['Display Value']) if linha['Display Value'] else 0
+
+        # Contar ocorrências de regiões
+        contagem_regioes[regiao] = contagem_regioes.get(regiao, 0) + 1
+
+        # Contar ocorrências de países
+        contagem_paises[pais] = contagem_paises.get(pais, 0) + 1
+
+        # Calcular a soma dos valores para cada tipo de bebida
+        soma_valores[bebida] = soma_valores.get(bebida, 0) + valor
+
+# Exibir os resultados
+print("Contagem de Regiões:")
+for regiao, contagem in contagem_regioes.items():
+    print(f"{regiao}: {contagem}")
+
+print("\nContagem de Países:")
+for pais, contagem in contagem_paises.items():
+    print(f"{pais}: {contagem}")
+
+print("\nSoma dos Valores por Tipo de Bebida:")
+for bebida, soma in soma_valores.items():
+    print(f"{bebida}: {soma}")
+
+Letra D) import pandas as pd
+import matplotlib.pyplot as plt
+
+# Ler os dados do arquivo CSV
+dados = pd.read_csv('world_alcohol.csv')
+
+# Remover linhas com valores ausentes
+dados = dados.dropna(subset=['Display Value'])
+
+# Converter a coluna 'Display Value' para o tipo float
+dados['Display Value'] = dados['Display Value'].astype(float)
+
+# Calcular a média
+media = dados['Display Value'].mean()
+
+# Calcular a moda
+moda = dados['Display Value'].mode()[0]
+
+# Calcular a mediana
+mediana = dados['Display Value'].median()
+
+# Calcular estatísticas descritivas
+estatisticas = dados['Display Value'].describe()
+
+# Agrupar os valores por tipo de bebida
+agrupados = dados.groupby('Beverage Types')['Display Value'].sum()
+
+# Criar o gráfico de comparação dos valores agrupados
+agrupados.plot(kind='bar')
+plt.xlabel('Tipo de Bebida')
+plt.ylabel('Total')
+plt.title('Comparação dos Valores Agrupados por Tipo de Bebida')
+plt.show()
+
+# Imprimir os resultados
+print(f"Média: {media}")
+print(f"Moda: {moda}")
+print(f"Mediana: {mediana}")
+print("Estatísticas Descritivas:")
+print(estatisticas)
+
+
+
+Letra E) i- import csv
+
+with open('world_alcohol.csv', 'r') as arquivo_csv:
+    leitor_csv = csv.DictReader(arquivo_csv)
+    
+    for linha in leitor_csv:
+        if linha['Year'] == '1985':
+            print(linha['Beverage Types'])
+
+ii- import csv
+
+with open('world_alcohol.csv', 'r') as arquivo_csv:
+    leitor_csv = csv.DictReader(arquivo_csv)
+    
+    for linha in leitor_csv:
+        if linha['Display Value'] != '' and float(linha['Display Value']) > 4:
+            print(linha['WHO region'])
+            
+
+
